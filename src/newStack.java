@@ -18,12 +18,16 @@ public class newStack {
     }
 
     public Object pop(){
-        if(position ==0 ){
+        if (isEmpty()) {
             throw new EmptyStackException();
         }
         Object poppedObject = elements[--position];
         elements[position] = null;
         return poppedObject;
+    }
+
+    public boolean isEmpty() {
+        return position == 0;
     }
 
     private void ensureCapacity(){
